@@ -1,11 +1,8 @@
 import { useContext, useState } from 'react'
-import { Countries } from '../context/CountriesContext'
-import { Region } from '../context/RegionContext'
-import { fetchData } from '../helpers/fetchData'
-
-const styles = {
-    padding: 30,
-}
+import { countryListByRegion } from '../../api/api'
+import { Countries } from '../../context/CountriesContext'
+import { Region } from '../../context/RegionContext'
+import { fetchData } from '../../helpers/fetchData'
 
 const SearchBar = () => {
     const { countries, setCountries, setLoading, setError } = useContext(Countries)
@@ -29,18 +26,18 @@ const SearchBar = () => {
                 country.name.common.toLowerCase().includes(searchInput))
             )
         } else {
-            fetchData(`https://restcountries.com/v3.1/region/${ regionSelected }`)
-            .then(data => {
-                setCountries(data)
-                setLoading(false)
-            })
-            .catch(e => setError(e))
+            fetchData(countryListByRegion(regionSelected))
+                .then(data => {
+                    setCountries(data)
+                    setLoading(false)
+                })
+                .catch(e => setError(e))
         }
     }
 
     return (
-        <div className="columns">
-            <div className="column is-5" style={styles}>
+        <div className="columns m-3">
+            <div className="column is-5">
                 <input
                     className="input"
                     type="text"
@@ -51,7 +48,7 @@ const SearchBar = () => {
                 />
             </div>
 
-            <div className="column is-7" style={styles}>
+            <div className="column is-7">
                 <div className="select is-flex is-justify-content-flex-end">
                     <select
                         onChange={handleRegionSelector}
