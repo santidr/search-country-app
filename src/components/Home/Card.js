@@ -3,7 +3,7 @@ import { numberWithCommas } from '../../helpers/numberWithCommas'
 
 const Card = ({ country }) => {
     return (
-        <div className="column is-3 is-full-mobile">
+        <div className="column is-full-mobile is-4-tablet is-3-widescreen">
             <Link to={`/country/${country.name.common}`}>
                 <div className="card">
                     <div className="card-image">

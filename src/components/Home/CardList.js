@@ -40,14 +40,14 @@ const CardList = () => {
 
     return (
         <>
-            <div className="columns is-full-mobile is-half-tablet is-flex-wrap-wrap mx-2 my-4">
+            <div className="columns is-variable is-2-mobile is-3-tablet is-8-widescreen is-flex-wrap-wrap mx-2 my-4">
                 {loading && <h3>Loading data...</h3>}
                 {currentCountries.map((item, index) => (
                     <Card key={index} country={item} />
                 ))}
             </div>
 
-            <div className="columns">
+            <div className="columns mx-2">
                 <div className="column">
                     {!loading && (
                         <Pagination
