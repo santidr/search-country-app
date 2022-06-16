@@ -38,7 +38,7 @@ const CountryPage = () => {
                 </div>
             </div>
 
-            <div className="columns m-3">
+            <div className="columns is-variable is-8-widescreen m-3">
                 { loading && <h2>Loading data...</h2> }
 
                 { country && (
