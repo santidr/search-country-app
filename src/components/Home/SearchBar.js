@@ -38,7 +38,11 @@ const SearchBar = () => {
     return (
         <div className="columns m-3">
             <div className="column is-5">
+                <span class="icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
                 <input
+                    id="search"
                     className="input"
                     type="text"
                     placeholder="Search for a country..."

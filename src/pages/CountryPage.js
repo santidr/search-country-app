@@ -25,6 +25,8 @@ const CountryPage = () => {
 
     }, [name, setLoading])
 
+    console.log(country)
+
     return (
         <>
             <div className="columns m-3">

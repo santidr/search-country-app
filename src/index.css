@@ -2,11 +2,31 @@
 
 body {
   margin: 0;
+  background-color: #fafafa;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 .navbar {
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+#search {
+  position: absolute;
+  left: 18px;
+  z-index: 0;
+  width: auto;
+  padding-left: 35px;
+  width: 360px;
+  max-width: 90%;
+}
+
+.icon .fa-magnifying-glass {
+  position: relative;
+  top: 9px;
+  left: 2px;
+  z-index: 2;
+  opacity: 0.7;
 }
