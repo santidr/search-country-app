@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useParams, useNavigate } from 'react-router-dom'
 import { singleCountryByName } from "../api/api"
 import CountryDetail from "../components/Country/CountryDetail"
+import Spinner from "../components/UI/Spinner"
 import { Countries } from "../context/CountriesContext"
 import { fetchData } from "../helpers/fetchData"
 
@@ -41,7 +42,7 @@ const CountryPage = () => {
             </div>
 
             <div className="columns is-variable is-8-widescreen m-3">
-                { loading && <h2>Loading data...</h2> }
+                { loading && <Spinner /> }
 
                 { country && (
                     <CountryDetail country={country} />

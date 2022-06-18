@@ -7,6 +7,7 @@ import { fetchData } from '../../helpers/fetchData'
 import { Region } from '../../context/RegionContext'
 import { Countries } from '../../context/CountriesContext'
 import { countryListByRegion } from '../../api/api'
+import Spinner from '../UI/Spinner'
 
 const CardList = () => {
 
@@ -41,15 +42,15 @@ const CardList = () => {
     return (
         <>
             <div className="columns is-variable is-2-mobile is-3-tablet is-8-widescreen is-flex-wrap-wrap mx-2 my-4">
-                {loading && <h3>Loading data...</h3>}
-                {currentCountries.map((item, index) => (
+                { loading && <Spinner /> }
+                { currentCountries.map((item, index) => (
                     <Card key={index} country={item} />
                 ))}
             </div>
 
             <div className="columns mx-2">
                 <div className="column">
-                    {!loading && (
+                    { !loading && (
                         <Pagination
                             totalPosts={countries.length}
                             postsPerPage={postsPerPage}
